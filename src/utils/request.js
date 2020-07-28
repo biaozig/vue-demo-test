@@ -70,7 +70,7 @@ const checkStatus = response => {
  * 封装请求
  * 
  * @options 
- *  method: 请求接口  'POST' | 'post' | 'GET' | 'get'
+ *  method: 接口
  *  data: 需要发送的数据
  *  noToken: 是否需要携带token 默认false 携带token
  *  noToast: 异常报错时是否需要弹窗提示 默认
@@ -91,12 +91,9 @@ const post = function(options){
       if(code === '0' || code === 0){
         return resolve(data)
       }
-
-      // 处理异常
-
-
       
-
+      // 处理异常
+      reject()
     })
   })
 }
