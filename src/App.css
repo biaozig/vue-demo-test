@@ -13,6 +13,7 @@ html, body, #root {
   height: 100%;
   font-family: myFont, sans-serif;
   overflow: hidden;
+  user-select: none;
 }
 
 /* iphonex 安全区域 */
@@ -47,10 +48,16 @@ body {
 /* 选中文本时的字体颜色 */
 ::selection { color: white; background: #0aa284;}
 
-/* 去掉chrome记住密码后自动填充表单的黄色背景 */
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px transparent inset; 
-  border : 1px solid #CCC !important;
+/* 去掉chrome记住密码后自动填充表单的背景 */
+input:-webkit-autofill, 
+textarea:-webkit-autofill, 
+select:-webkit-autofill {
+  -webkit-text-fill-color: #ededed !important;  
+  -webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;  
+  border: 1px solid #CCC !important;
+  background-color: transparent !important;  
+  background-image: none;  
+  transition: background-color 50000s ease-in-out 0s;
 }
 
 /* chrome字体缩小 */
