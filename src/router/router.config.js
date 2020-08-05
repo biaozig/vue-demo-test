@@ -1,38 +1,53 @@
 
-import TabbarLayout from '../layouts/TabbarLayout'; // 带tabbar
+import TabbarLayout from '../layouts/TabbarLayout';
+import BlankLayout from '../layouts/BlankLayout'; 
 
 const routes = [
+  // {
+  //   path: '/',
+  //   name: 'Home',
+  //   component: TabbarLayout,
+  //   children: [
+  //     {
+  //       path: '/home',
+  //       component: () => import(/* webpackChunkName: "about" */ '../views/home')
+  //     },
+  //     {
+  //       path: '/cart',
+  //       component: () => import(/* webpackChunkName: "about" */ '../views/cart')
+  //     },
+  //     {
+  //       path: '/catalog',
+  //       component: () => import(/* webpackChunkName: "about" */ '../views/catalog')
+  //     },
+  //     {
+  //       path: '/user',
+  //       component: () => import(/* webpackChunkName: "about" */ '../views/account/user')
+  //     }
+  //   ]
+  // },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "about" */ '../views/login')
+  },
   {
     path: '/',
-    name: 'Home',
-    component: TabbarLayout,
+    redirect: '/merchant', 
+    component: BlankLayout,
     children: [
       {
-        path: '/home',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Home')
-      },
-      {
-        path: '/cart',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Cart')
-      },
-      {
-        path: '/catalog',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Catalog')
+        path: '/merchant',
+        name: 'Merchant',
+        component: () => import(/* webpackChunkName: "about" */ '../views/merchant')
       },
       {
         path: '/user',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Account/User')
-      }
+        name: 'User',
+        component: () => import(/* webpackChunkName: "about" */ '../views/account/user')
+      },
     ]
-  },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+  }
 ];
 
 export default routes;

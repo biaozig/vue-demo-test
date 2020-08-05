@@ -1,0 +1,81 @@
+@import '//at.alicdn.com/t/font_1611768_uhm8xpg66rp.css';
+@font-face {
+  font-family: 'myFont'; 
+  src: url('./assets/fonts/PingFang-Medium.ttf'); /* 你的资源目录 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body, #root {
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  height: 100%;
+  font-family: myFont, sans-serif;
+  overflow: hidden;
+}
+
+/* iphonex 安全区域 */
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #fff !important;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* iphonex fix底部元素适配 */
+:global(.fixed_bottom) {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  z-index: 10;
+  background-color: #fff;
+}
+
+:global(.clearfix:after) {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+[title~='站长统计'] {
+  display: none;
+}
+
+
+/* 选中文本时的字体颜色 */
+::selection { color: white; background: #0aa284;}
+
+/* 去掉chrome记住密码后自动填充表单的黄色背景 */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; 
+  border : 1px solid #CCC !important;
+}
+
+/* chrome字体缩小 */
+.chrome_adjust { 
+  font-size: 9px; 
+  -webkit-transform: scale(0.75); 
+}
+
+/* 手机上取消高亮边框 */
+/* { -webkit-appearance: none; -webkit-tap-highlight-color: rgba(0,0,0,0);} */
+
+/* 一行省略号 */
+.ellipsis{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* 去掉默认表单元素样式 */
+/* -webkit-appearance: none; */
+
+/* 加上这个让浏览器支持touch和自动滚动这样界面就可以滚动了 */
+/* overflow-y: auto; -webkit-overflow-scrolling:touch; */
+/* 抗锯齿 */
+* {
+  -webkit-font-smoothing: antialiased; 
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
