@@ -29,8 +29,8 @@
           </div>
         </div>
       </div>
-      <div class='input-btn'>
-        <span @click="login">登录</span>
+      <div @click="login" class='input-btn'>
+        <span>登录</span>
       </div>
     </div>
     <div class="login-footer">
