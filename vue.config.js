@@ -1,8 +1,18 @@
-import path from 'path'
+const path = require('path')
 
 module.exports = {
   outputDir: 'build',
   // publicPath: process.env.NODE_ENV === 'production' ? '/vant-demo/' : '/',
+  configureWebpack: {
+    // provide the app's title in webpack's name field, so that
+    // it can be accessed in index.html to inject the correct title.
+    name: 'vue-demo-test',
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src')
+      }
+    }
+  },
   css: {
     loaderOptions: {
       // 配置主题色
@@ -38,10 +48,5 @@ module.exports = {
         ]
       }
     }
-  },
-  alias: {
-    '@': path.resolve(__dirname, 'src'),
-
-    
   }
 };
