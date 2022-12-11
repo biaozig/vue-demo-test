@@ -16,7 +16,7 @@
     "moment": "^2.27.0",
     "nprogress": "^0.2.0",
     "postcss-pxtorem": "^5.1.1",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "vant": "^2.9.3",
     "vue": "^2.6.11",
     "vue-clipboard2": "^0.3.1",
